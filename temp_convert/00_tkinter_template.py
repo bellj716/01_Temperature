@@ -23,9 +23,14 @@ if __name__ == '__main__':
 
             #help button (row 1)
             self.help_button = Button(self.converter_frame, text="help",
-                                      font=("Papyrus", "12"),
-                                      padx=10, pady=-10)
+                                      font=("Papyrus", "14"),
+                                      padx=10, pady=-10, command=self.help)
             self.help_button.grid(row=1)
+
+        def help(self):
+            print("HYE HEH HEH, YOU HAVE REQUESTED HELP FROM THE GREAT PAPYRUS")
+            get_help = Help(self)
+            get_help.help_text.configure(text="NYE HEH HEH HELP TEXT GOES HERE")
 
 # main routine
 if __name__ == "__main__":
