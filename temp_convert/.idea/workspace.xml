@@ -42,11 +42,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="02_converter_GUI.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="02_converter_GUI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/02_converter_GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="61" column="34" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
+            <state relative-caret-position="807">
+              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="03_c_to_f_v1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/03_c_to_f_v1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <marker date="1582057979290" expanded="true" signature="128:187" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="03_f_to_c_v1.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/03_f_to_c_v1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -67,6 +89,8 @@
         <option value="$PROJECT_DIR$/01_temp_convert.py" />
         <option value="$PROJECT_DIR$/00_tkinter_template.py" />
         <option value="$PROJECT_DIR$/02_converter_GUI.py" />
+        <option value="$PROJECT_DIR$/03_c_to_f_v1.py" />
+        <option value="$PROJECT_DIR$/03_f_to_c_v1.py" />
       </list>
     </option>
   </component>
@@ -129,7 +153,12 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.02_converter_GUI">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\Documents\GitHub\01_Temperature\temp_convert" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.03_f_to_c_v1">
     <configuration default="false" name="00_tkinter_template" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -160,6 +189,40 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="temp_convert" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/02_converter_GUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="03_c_to_f_v1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="temp_convert" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/03_c_to_f_v1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="03_f_to_c_v1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="temp_convert" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/03_f_to_c_v1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -298,14 +361,18 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.00_tkinter_template" />
       <item index="1" class="java.lang.String" itemvalue="Python.02_converter_GUI" />
+      <item index="2" class="java.lang.String" itemvalue="Python.03_c_to_f_v1" />
+      <item index="3" class="java.lang.String" itemvalue="Python.03_f_to_c_v1" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.02_converter_GUI" />
-        <item index="1" class="java.lang.String" itemvalue="Python.00_tkinter_template" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.03_f_to_c_v1" />
+        <item index="1" class="java.lang.String" itemvalue="Python.03_c_to_f_v1" />
+        <item index="2" class="java.lang.String" itemvalue="Python.02_converter_GUI" />
+        <item index="3" class="java.lang.String" itemvalue="Python.00_tkinter_template" />
       </list>
     </recent_temporary>
   </component>
@@ -397,6 +464,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/00_tkinter_template.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02_converter_GUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_temp_convert.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/00_tkinter_template.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
@@ -479,8 +572,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/02_converter_GUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="61" column="34" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
+        <state relative-caret-position="807">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_c_to_f_v1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <marker date="1582057979290" expanded="true" signature="128:187" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_f_to_c_v1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
           <folding />
         </state>
       </provider>
