@@ -70,27 +70,29 @@ class Converter:
     def temp_convert(self, to):
         print(to)
 
+        error = "#ffafaf"       # Pale pink background for when entry has errors
+
         # retrieve amount entered into entry field
         to_convert = self.to_convert_entry.get()
 
         try:
             to_convert = float(to_convert)
-            print("A")
+
+            # check amount is a valid number
+
+            # convert to f
+
+            # convert to c
+
+            # round!!
+
+            # display answer
+
+            # add answer to list for history
 
         except ValueError:
-            print("B")
-
-        # check amount is a valid number
-
-        # convert to f
-
-        # convert to c
-
-        # round!!
-
-        # display answer
-
-        # add answer to list for history
+            self.converted_label.configure(text="Enter a number!!", fg="red")
+            self.to_convert_entry.configure(bg=error)
 
 
 # main routine
