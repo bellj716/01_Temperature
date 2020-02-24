@@ -67,8 +67,8 @@ class Converter:
                                   text="Help", width=5)
         self.help_button.grid(row=0, column=1)
 
-    def temp_convert(self, to):
-        print(to)
+    def temp_convert(self, low):
+        print(low)
 
         error = "#ffafaf"       # Pale pink background for when entry has errors
 
@@ -77,28 +77,54 @@ class Converter:
 
         try:
             to_convert = float(to_convert)
+            has_errors = "no"
 
             # check amount is a valid number
 
             # convert to f
+            if low == -273 and to_convert >= low:
+                fahrenheit = (to_convert * 9/5) + 32
+                to_convert = self.round_it(to_convert)
+                fahrenheit = self.round_it(fahrenheit)
+                answer = "{} degrees C is {} degrees F".format(to_convert, fahrenheit)
 
             # convert to c
+            elif low == -459 and to_convert >= low:
+                celsius = (to_convert - 32) * 5/9
+                to_convert = self.round_it(to_convert)
+                celsius = self.round_it(celsius)
+                answer = "{} degrees F is {} degrees C".format(to_convert, celsius)
 
-            # round!!
+            else:
+                #input is invalid (too cold)
+                answer = "Too Cold!"
+                has_errors = "yes"
 
-            # display answer
+            #display answer
+            if has_errors == "no":
+                self.converted_label.configure(text=answer, fg="blue")
+                self.to_convert_entry.configure(bg="white")
 
-            # add answer to list for history
+            else:
+                self.converted_label.configure(text=answer, fg="red")
+                self.to_convert_entry.configure(bg=error)
 
         except ValueError:
             self.converted_label.configure(text="Enter a number!!", fg="red")
             self.to_convert_entry.configure(bg=error)
 
+    def round_it(self, to_round):
+        if to_round % 1 == 0:
+            rounded = int(to_round)
+        else:
+            rounded = round(to_round, 1)
+
+        return rounded
 
 # main routine
 if __name__ == "__main__":
     root = Tk()
-    root.title("Temperature Convertwe")
+    root.title("Temperature Converter")
     root.resizable(width=False, height=False)
     something = Converter(root)
     root.mainloop()
