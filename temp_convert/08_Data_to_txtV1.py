@@ -17,5 +17,5 @@ f = open(filename, "w+")
 for item in data:
     f.write(item + "\n")
 
-# colse file
+# close file
 f.close()
