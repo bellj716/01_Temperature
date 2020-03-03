@@ -1,10 +1,15 @@
-#check if something is valid
-
+# Source: https://www.guru99.com/reading-and-writing-files-in-python.html
 import re
+
+# Data to be outputted
+data = ['First', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh']
+
+# get filename, cant be blank / invalid
+# assume valid data for now
 
 has_error = "yes"
 while has_error == "yes":
-    filename = input("Enter a filename: ")
+    filename = input("Enter a filename (leave off the extension): ")
     has_error = "no"
 
     valid_char = "[A-Za-z0-9_]"
@@ -27,3 +32,16 @@ while has_error == "yes":
         print()
     else:
         print("You entered a valid filename")
+
+# add .txt suffix!
+filename += ".txt"
+
+# create file to hold data
+f = open(filename, "w+")
+
+# add new line at the end of each item
+for item in data:
+    f.write(item + "\n")
+
+# close file
+f.close()
