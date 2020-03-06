@@ -17,7 +17,6 @@ class Converter:
                                  '45 degrees F is 7.2 degrees C',
                                  '70 degrees F is 21.1 degrees C']
 
-
         # Converter Frame
         self.converter_frame = Frame(width=500, height=700, bg=background_color, pady=10)
         self.converter_frame.grid()
