@@ -33,18 +33,17 @@ if __name__ == '__main__':
             #history button (row 1)
             self.history_button = Button(self.converter_frame, text="History",
                                       font=("Arial", "14"),
-                                      padx=10, pady=-10, command=self.history)
+                                      padx=10, pady=-10,
+                                      command=lambda: self.history(self.all_calculations))
             self.history_button.grid(row=1)
 
-        def history(self):
-            print("YOU HAVE REQUESTED History")
-            get_history = history(self)
-            get_history.history_text.configure(text="History TEXT GOES HERE", font="Arial 8")
+        def history(self, calc_history):
+            History(self, calc_history)
 
-class history:
-    def __init__(self, partner):
+class History:
+    def __init__(self, partner, calc_history):
 
-        background = "orange"
+        background = "#a9ef99" # Pale green
 
         #disable history button
         partner.history_button.config(state=DISABLED)
@@ -65,24 +64,48 @@ class history:
         self.how_heading.grid(row=0)
 
         # history text (label, row 1)
-        self.history_text = Label(self.history_frame, text="Here are your most recent "
-                                                           "calculations. Please use the "
-                                                           "export buttone and create a text"
-                                                           "file of all your calculations"
-                                                           "for this session", font="Arial 12 italic",
-                                                            justify=LEFT, width=40, bg=background,
-                                                            wrap=250, fg="maroon", padx=10, pady=-10)
+        self.history_text = Label(self.history_frame, text="Here is your calculation "
+                                                           "history. You can use the "
+                                                           "export button to save this "
+                                                           "data to a text file if "
+                                                           "desired.",
+                                                           font="Arial 12 italic",
+                                                           justify=LEFT, width=30, bg=background,
+                                                           wrap=250, fg="maroon", padx=10, pady=10)
         self.history_text.grid(row=1)
 
         # History Output (row 2)
 
-        # dismiss button frame (row 3)
+        # Generate string from list of calculations
+        history_string = ""
+
+        if len(calc_history) >= 7:
+            for item in range(0, 7):
+                history_string += calc_history[len(calc_history) - item - 1]+"\n"
+
+        else:
+            for item in calc_history:
+                history_string += calc_history[len(calc_history) -
+                                                calc_history.index(item) - 1] + "\n"
+                self.history_text.config(text="Here is your calculation "
+                                              "history. You can use the "
+                                              "export button to save this "
+                                              "data to a text file if "
+                                              "desired.")
+
+        # label to display calculation history to user
+        self.calc_label = Label(self.history_frame, text=history_string, bg=background,
+                                font="Arial 12", justify=LEFT)
+        self.calc_label.grid(row=2)
+
+        # export/dismiss button frame (row 3)
         self.export_dismiss_frame = Frame(self.history_frame)
         self.export_dismiss_frame.grid(row=3, pady=10)
 
         # dismiss button
         self.dismiss_button = Button(self.export_dismiss_frame, text="Dismiss",
-                                     font="Arial 14 bold", command=partial(self.close_history, partner))
+                                     font="Arial 14 bold",
+                                     command=partial(self.close_history, partner))
         self.dismiss_button.grid(row=0, column=1)
 
         # export button
