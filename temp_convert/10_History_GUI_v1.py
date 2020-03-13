@@ -5,7 +5,7 @@ import random
 
 if __name__ == '__main__':
     class Converter:
-        def __init__(self, parent):
+        def __init__(self, partner):
 
             # Formatting variables...
             background_color = "light blue"
