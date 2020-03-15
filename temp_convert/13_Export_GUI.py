@@ -18,64 +18,71 @@ if __name__ == '__main__':
                                      partial(self.close_export, partner))
 
             # set up GUI frame
-            self.export_frame = Frame(self.export_box, width=300,  bg=background_color,)
-            self.export_frame.grid()
+            self.converter_frame = Frame(width=300, height=300,  bg=background_color,)
+            self.converter_frame.grid()
 
             # Temperature converion heading row 0
-            self.temp_export_label = Label(self.export_frame, text="Export / Instructions",
+            self.temp_converter_label = Label(self.converter_frame, text="Temperature Converter",
                                            font=("Arial", "14", "bold"),
-                                           bg=background_color)
-            self.temp_export_label.grid(row=0)
+                                           bg=background_color,
+                                            padx=10, pady=10)
+            self.temp_converter_label.grid(row=0)
 
-            #help button (row 1)
-            self.help_button = Button(self.export_frame, text="help",
+            #export button (row 1)
+            self.export_button = Button(self.converter_frame, text="Export",
                                       font=("Arial", "14"),
-                                      padx=10, pady=-10, command=self.help)
-            self.help_button.grid(row=1)
+                                      padx=10, pady=-10, command=self.export)
+            self.export_button.grid(row=1)
 
-        def help(self):
-            print("YOU HAVE REQUESTED HELP")
-            get_help = Help(self)
-            get_help.help_text.configure(text="HELP TEXT GOES HERE", font="Arial 8")
+        def export(self):
+            get_export = Export(self)
 
-class Help:
+class Export:
     def __init__(self, partner):
 
         background = "orange"
 
-        #disable help button
-        partner.help_button.config(state=DISABLED)
+        #disable export button
+        partner.export_button.config(state=DISABLED)
 
-        # sets up child window (ie: help box)
-        self.help_box = Toplevel()
+        # sets up child window (ie: export box)
+        self.export_box = Toplevel()
 
-        #if user press cross instead of dismiss, close help and release help button
-        self.help_box.protocol('WM_DELETE_WINDOW', partial(self.close_help, partner))
+        #if user press cross instead of dismiss, close export and release export button
+        self.export_box.protocol('WM_DELETE_WINDOW', partial(self.close_export, partner))
 
         # set up gui frame
-        self.help_frame = Frame(self.help_box, bg=background)
-        self.help_frame.grid()
+        self.export_frame = Frame(self.export_box, bg=background)
+        self.export_frame.grid()
 
-        #set up help heading (row 0)
-        self.how_heading = Label(self.help_frame, text="Help and Instructions",
+        #set up export heading (row 0)
+        self.how_heading = Label(self.export_frame, text="Export / Instructions",
                                  font="Arial 16 bold", bg=background)
         self.how_heading.grid(row=0)
 
-        # help text (label, row 1)
-        self.help_text = Label(self.help_frame, text="",
-                               justify=LEFT, width=40, bg=background, wrap=250)
-        self.help_text.grid(row=1)
+        # export text (label, row 1)
+        self.export_text = Label(self.export_frame,
+                                 text=" Enter a filename in the box below "
+                                 "and press the save button to save your "
+                                 "Calculation history to a text file.",
+                                 justify=LEFT, width=40, bg=background,
+                                 wrap=250)
+        self.export_text.grid(row=1)
 
-        #dismiss button (row 2)
-        self.dismiss_btn = Button(self.help_frame, text="Dismiss", width=10,
+        #Warning Text (Label, row 2)
+        self.export_text = Button(self.export_frame,
+                                  text="if the filename you enter below already exists, "
+                                            "its contents will be replaced with your calculation "
+                                            "History",
+                                  width=10,
                                   bg="orange", font="Arial 14 bold",
-                                  command=partial(self.close_help,partner))
-        self.dismiss_btn.grid(row=2, pady=10)
+                                  command=partial(self.close_export,partner))
+        self.export_text.grid(row=2, pady=10)
 
-    def close_help(self, partner):
-        # put help button back to normal
-        partner.help_button.config(state=NORMAL)
-        self.help_box.destroy()
+    def close_export(self, partner):
+        # put export button back to normal
+        partner.export_button.config(state=NORMAL)
+        self.export_box.destroy()
 
 
 # main routine
