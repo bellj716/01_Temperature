@@ -5,37 +5,31 @@ import random
 
 if __name__ == '__main__':
     class Converter:
-        def __init__(self, partner):
+        def __init__(self, parent):
 
             # Formatting variables...
             background_color = "light blue"
 
-            # disable export button
-            partner.export_button.config(state=DISABLED)
-
-            # if user press cross at top, close export and releases export button
-            self.export_box.protocol('WM_DELETE_WINDOW',
-                                     partial(self.close_export, partner))
-
-            # set up GUI frame
-            self.converter_frame = Frame(width=300, height=300,  bg=background_color,)
+            # Converter Main Screen GUI
+            self.converter_frame = Frame(width=500, height=700, bg=background_color, pady=10)
             self.converter_frame.grid()
 
             # Temperature converion heading row 0
             self.temp_converter_label = Label(self.converter_frame, text="Temperature Converter",
-                                           font=("Arial", "14", "bold"),
-                                           bg=background_color,
-                                            padx=10, pady=10)
+                                              font=("Arial", "18", "bold"),
+                                              bg=background_color,
+                                              padx=10, pady=10)
             self.temp_converter_label.grid(row=0)
 
             #export button (row 1)
-            self.export_button = Button(self.converter_frame, text="Export",
+            self.export_button = Button(self.converter_frame, text="export",
                                       font=("Arial", "14"),
                                       padx=10, pady=-10, command=self.export)
             self.export_button.grid(row=1)
 
         def export(self):
             get_export = Export(self)
+
 
 class Export:
     def __init__(self, partner):
@@ -56,7 +50,7 @@ class Export:
         self.export_frame.grid()
 
         #set up export heading (row 0)
-        self.how_heading = Label(self.export_frame, text="Export / Instructions",
+        self.how_heading = Label(self.export_frame, text="Export and Instructions",
                                  font="Arial 16 bold", bg=background)
         self.how_heading.grid(row=0)
 
@@ -64,16 +58,17 @@ class Export:
         self.export_text = Label(self.export_frame,
                                  text=" Enter a filename in the box below "
                                  "and press the save button to save your "
-                                 "Calculation history to a text file.",
+                                 "Calculation history to a text file."
+                                 "if the filename you enter below already exists, "
+                                 "its contents will be replaced with your calculation "
+                                 "History",
                                  justify=LEFT, width=40, bg=background,
                                  wrap=250)
         self.export_text.grid(row=1)
 
         #Warning Text (Label, row 2)
         self.export_text = Button(self.export_frame,
-                                  text="if the filename you enter below already exists, "
-                                       "its contents will be replaced with your calculation "
-                                       "History", width=10,
+                                  text="Save", width=10,
                                   bg="orange", font="Arial 14 bold",
                                   command=partial(self.close_export,partner))
         self.export_text.grid(row=2, pady=10)
@@ -85,7 +80,7 @@ class Export:
         # Save and cancel buttons (row 0 of save_cancel_frame)
         self.save_button = Button(self.save_cancel_frame, text="Cancel",
                                   command=partial(self.close_export, partner))
-        self.save_button.grid(row=0,  column=1)
+        self.save_button.grid(row=0, column=1)
 
     def close_export(self, partner):
         # put export button back to normal
