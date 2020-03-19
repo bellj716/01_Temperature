@@ -150,8 +150,8 @@ class Export:
         self.export_text = Label(self.export_frame,
                                  text=" Enter a filename in the box below "
                                       "and press the save button to save your "
-                                      "Calculation history to a text file."
-                                      "if the filename you enter below already exists, "
+                                      "Calculation history to a text file. "
+                                      "If the filename you enter below already exists, "
                                       "its contents will be replaced with your calculation "
                                       "History",
                                  justify=LEFT, width=40, bg=background,
