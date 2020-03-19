@@ -1,7 +1,0 @@
-10 degrees F is -12.2 degrees C
-13 degrees F is -10.6 degrees C
-250 degrees F is 121.1 degrees C
--100 degrees F is -73.3 degrees C
-785 degrees F is 418.3 degrees C
-45 degrees F is 7.2 degrees C
-70 degrees F is 21.1 degrees C
