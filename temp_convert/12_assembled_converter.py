@@ -146,7 +146,6 @@ class Converter:
                                      "(most recent at the top. \n\nYou can also export "
                                      "your full calculation to a text file if desired.")
 
-
 class History:
     def __init__(self, partner, calc_history):
 
@@ -384,5 +383,6 @@ class Help:
 if __name__ == "__main__":
     root = Tk()
     root.title("Temperature Converter")
+    root.resizable(width=False, height=False)
     something = Converter(root)
     root.mainloop()
