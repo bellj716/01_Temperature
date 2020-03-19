@@ -201,23 +201,29 @@ class Export:
             has_error = "yes"
 
         if has_error == "yes":
-            print("Invalid filename - {}".format(problem))
+            # Display error msg
+            self.save_error_label.config(text="Invalid filename - {}".format(problem))
+            # change entry box background to pink
+            self.filename_entry.config(bg="#ffafaf")
             print()
         else:
             print("You entered a valid filename")
 
-    # add .txt suffix!
-    filename += ".txt"
+            # add .txt suffix!
+            filename += ".txt"
 
-    # create file to hold data
-    f = open(filename, "w+")
+            # create file to hold data
+            f = open(filename, "w+")
 
-    # add new line at the end of each item
-    for item in data:
-        f.write(item + "\n")
+            # add new line at the end of each item
+            for item in calc_history:
+                f.write(item + "\n")
 
-    # close file
-    f.close()
+            # close file
+            f.close()
+
+            # close dialogue
+            self.close_export(partner)
 
     def close_export(self, partner):
         # put export button back to normal
